@@ -10,6 +10,102 @@
 	</head>
 	<body class="is-preload">
 
+
+
+<script language="JavaScript">
+ 
+	//////////F12 disable code////////////////////////
+		document.onkeypress = function (event) {
+			event = (event || window.event);
+			if (event.keyCode == 123) {
+			   //alert('No F-12');
+				return false;
+			}
+		}
+		document.onmousedown = function (event) {
+			event = (event || window.event);
+			if (event.keyCode == 123) {
+				//alert('No F-keys');
+				return false;
+			}
+		}
+	document.onkeydown = function (event) {
+			event = (event || window.event);
+			if (event.keyCode == 123) {
+				//alert('No F-keys');
+				return false;
+			}
+		}
+	/////////////////////end///////////////////////
+	 
+	 
+	//Disable right click script 
+	//visit http://www.rainbow.arch.scriptmania.com/scripts/ 
+	var message="Sorry, right-click has been disabled"; 
+	/////////////////////////////////// 
+	function clickIE() {if (document.all) {(message);return false;}} 
+	function clickNS(e) {if 
+	(document.layers||(document.getElementById&&!document.all)) { 
+	if (e.which==2||e.which==3) {(message);return false;}}} 
+	if (document.layers) 
+	{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;} 
+	else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;} 
+	document.oncontextmenu=new Function("return false") 
+	// 
+	function disableCtrlKeyCombination(e)
+	{
+	//list all CTRL + key combinations you want to disable
+	var forbiddenKeys = new Array('a', 'n', 'c', 'x', 'v', 'j' , 'w');
+	var key;
+	var isCtrl;
+	if(window.event)
+	{
+	key = window.event.keyCode;     //IE
+	if(window.event.ctrlKey)
+	isCtrl = true;
+	else
+	isCtrl = false;
+	}
+	else
+	{
+	key = e.which;     //firefox
+	if(e.ctrlKey)
+	isCtrl = true;
+	else
+	isCtrl = false;
+	}
+	//if ctrl is pressed check if other key is in forbidenKeys array
+	if(isCtrl)
+	{
+	for(i=0; i<forbiddenKeys.length; i++)
+	{
+	//case-insensitive comparation
+	if(forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase())
+	{
+	alert('Key combination CTRL + '+String.fromCharCode(key) +' has been disabled.');
+	return false;
+	}
+	}
+	}
+	return true;
+	}
+	 
+	//ctrl+u not allowed
+	document.onkeydown = function(e) {
+			if (e.ctrlKey && 
+				 e.keyCode === 86 || 
+				(e.keyCode === 67 || 
+				 e.keyCode === 85 || 
+				 e.keyCode === 117)) {
+				alert('not allowed');
+				return false;
+			} else {
+				return true;
+			}
+	};
+	 
+	</script>
+
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
 
@@ -31,7 +127,7 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="index.html">:)</a></li>	
+							<li class="active"><a href="index.html">MAS O QUE È ESTE SITE ? ----> :OOO https://www.protectedtext.com/bibiu</a></li>	
 					</nav>
 
 				<!-- Main -->
@@ -42,9 +138,9 @@
 								<header class="major">
 									<h2><a href="#">Puzzle<br />
 									</a></h2>
-									<p>Thamires Samira, a pessoa mais incrivel e linda de minha vida</p>
+									<p>Bom dia meu bem, tudo bem ?</p>
 								</header>
-								<p>Tenta ai meo ;)</p>
+								<!--<p>Tenta ai meo ;)</p> !-->
 
 <button onclick="myFunction()">EXTREMELY COOL BUTTON</button>
 
@@ -53,19 +149,19 @@
 <script>
 function myFunction() {
   var text;
-  var favDrink = prompt("Eu te amo muito :) ", "Responde ai bibiu");
+  var favDrink = prompt("When people try to get you down ", "Remember that i am here for you :)");
   switch(favDrink) {
-    case "Martini":
-      text = "Excellent choice. Martini is good for your soul.";
+    case "sim":
+      text = "e9064b74d28acc053231170bb8c858b3";
       break;
-    case "Daiquiri":
-      text = "Daiquiri is my favorite too!";
+    case "tudo":
+      text = "99eeb26a99330766b21ddf593f3c329d";
       break;
-    case "Cosmopolitan":
-      text = "Really? Are you sure the Cosmopolitan is your favorite?";
+    case "nao":
+      text = "Como assim meo ? :o 4f876ab4493c98f6e241355c57136259";
       break;
     default:
-      text = "Erroooou :)";
+      text = "Erroooou :) 43848dae9557f8d67c7e2840f352aa16";
   }
   document.getElementById("demo").innerHTML = text;
 }
